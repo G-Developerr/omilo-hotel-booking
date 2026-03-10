@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+
+# Environment
+.env
+.env.local
+.env.production
+backend/.env
+frontend/.env
+
+# Build
+dist/
+build/
+*.log
+frontend/build/
+backend/build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Backend
+backend/node_modules/
+backend/package-lock.json
+
+# Frontend
+frontend/node_modules/
+frontend/package-lock.json
+frontend/build/
