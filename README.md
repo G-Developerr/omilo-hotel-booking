@@ -13,6 +13,10 @@ A modern hotel booking application built with React.
 | Alex Papadopoulos | alex@omilo.com | alex123 | 💎 Platinum |
 | Sofia Nakamura | sofia@omilo.com | sofia123 | 🥈 Silver |
 
+## 📸 Preview
+
+![Omilo Hotel Booking](screenshots/dashboard.png)
+
 ## ✨ Features
 - 🔐 Multi-account login system
 - 🏨 Hotel search & booking
