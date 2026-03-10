@@ -16,7 +16,7 @@ A modern hotel booking application built with React.
 
 ## 📸 Preview
 
-![Omilo Hotel Booking](screenshots/dashboard.png)
+![Omilo Hotel Booking](bookings.jpg)
 
 ## ✨ Features
 - 🔐 Multi-account login system
