@@ -1,0 +1,434 @@
+.login-root {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg);
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* Animated background blobs */
+
+.login-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.18;
+    pointer-events: none;
+    animation: blobFloat 8s ease-in-out infinite alternate;
+}
+
+.login-blob-1 {
+    width: 480px;
+    height: 480px;
+    background: var(--gold);
+    top: -120px;
+    left: -120px;
+    animation-delay: 0s;
+}
+
+.login-blob-2 {
+    width: 360px;
+    height: 360px;
+    background: var(--purple);
+    bottom: -80px;
+    right: -80px;
+    animation-delay: 2s;
+}
+
+.login-blob-3 {
+    width: 280px;
+    height: 280px;
+    background: var(--blue);
+    top: 50%;
+    left: 60%;
+    animation-delay: 4s;
+}
+
+@keyframes blobFloat {
+    from {
+        transform: translate(0, 0) scale(1);
+    }
+    to {
+        transform: translate(24px, -24px) scale(1.08);
+    }
+}
+
+
+/* Card */
+
+.login-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--r-xl);
+    padding: 40px 36px;
+    width: 460px;
+    max-width: calc(100vw - 40px);
+    box-shadow: var(--shadow-lg), 0 0 0 1px rgba(212, 168, 83, 0.06);
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Logo */
+
+.login-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 28px;
+}
+
+.login-logo svg {
+    width: 28px;
+    height: 28px;
+    color: var(--gold);
+}
+
+.login-logo span {
+    font-family: var(--font-head);
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--text);
+    letter-spacing: -0.5px;
+}
+
+.login-title {
+    font-family: var(--font-head);
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--text);
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+}
+
+.login-sub {
+    font-size: 14px;
+    color: var(--text-2);
+    margin-bottom: 24px;
+}
+
+
+/* Tabs */
+
+.login-tabs {
+    display: flex;
+    gap: 8px;
+    background: var(--surface2);
+    border-radius: var(--r-md);
+    padding: 4px;
+    margin-bottom: 24px;
+}
+
+.login-tab {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 9px 14px;
+    border-radius: calc(var(--r-md) - 4px);
+    border: none;
+    background: transparent;
+    color: var(--text-2);
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s var(--ease);
+}
+
+.login-tab svg {
+    width: 14px;
+    height: 14px;
+}
+
+.login-tab.active {
+    background: var(--gold);
+    color: #000;
+    box-shadow: 0 4px 12px rgba(212, 168, 83, 0.3);
+}
+
+.login-tab:not(.active):hover {
+    color: var(--text);
+    background: var(--surface3);
+}
+
+.login-hint {
+    font-size: 12px;
+    color: var(--text-3);
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+
+/* Account cards */
+
+.login-account-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.login-account-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 16px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: var(--r-md);
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s var(--ease);
+    width: 100%;
+}
+
+.login-account-card:hover {
+    border-color: var(--gold);
+    background: var(--surface3);
+    box-shadow: 0 4px 16px rgba(212, 168, 83, 0.1);
+}
+
+.login-account-card:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.login-acc-avatar {
+    width: 46px;
+    height: 46px;
+    border-radius: var(--r-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-family: var(--font-head);
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.login-acc-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.login-acc-info strong {
+    font-family: var(--font-head);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.login-acc-info>span {
+    font-size: 12px;
+    color: var(--text-2);
+}
+
+.login-acc-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.login-badge {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: var(--r-full);
+}
+
+.login-trips {
+    font-size: 11px;
+    color: var(--text-3);
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.login-trips svg {
+    width: 11px;
+    height: 11px;
+}
+
+.login-acc-arrow {
+    width: 16px;
+    height: 16px;
+    color: var(--text-3);
+    flex-shrink: 0;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.login-account-card:hover .login-acc-arrow {
+    color: var(--gold);
+    transform: translateX(3px);
+}
+
+
+/* Manual form */
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.login-field {
+    display: flex;
+    align-items: center;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: var(--r-md);
+    padding: 0 14px;
+    gap: 10px;
+    transition: border-color 0.2s;
+}
+
+.login-field:focus-within {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px var(--gold-dim);
+}
+
+.login-field-icon {
+    width: 16px;
+    height: 16px;
+    color: var(--text-3);
+    flex-shrink: 0;
+}
+
+.login-field input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 13px 0;
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: var(--text);
+}
+
+.login-field input::placeholder {
+    color: var(--text-3);
+}
+
+.login-eye {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-3);
+    padding: 0;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s;
+}
+
+.login-eye:hover {
+    color: var(--gold);
+}
+
+.login-eye svg {
+    width: 16px;
+    height: 16px;
+}
+
+.login-error {
+    font-size: 13px;
+    color: var(--red);
+    background: rgba(239, 68, 68, 0.08);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    border-radius: var(--r-sm);
+    padding: 10px 12px;
+}
+
+.login-creds-hint {
+    background: var(--surface3);
+    border-radius: var(--r-sm);
+    padding: 10px 12px;
+    font-size: 12px;
+    color: var(--text-3);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    align-items: center;
+}
+
+.login-creds-hint p {
+    width: 100%;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: var(--text-2);
+}
+
+.login-creds-hint span {
+    color: var(--gold);
+    cursor: pointer;
+    font-size: 11px;
+    background: var(--gold-dim);
+    padding: 2px 8px;
+    border-radius: var(--r-full);
+    transition: background 0.2s;
+}
+
+.login-creds-hint span:hover {
+    background: rgba(212, 168, 83, 0.25);
+}
+
+.login-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px;
+    background: linear-gradient(135deg, var(--gold), #b88a3f);
+    color: #000;
+    border: none;
+    border-radius: var(--r-md);
+    font-family: var(--font-head);
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: var(--shadow-gold);
+    transition: all 0.2s var(--ease);
+    letter-spacing: 0.3px;
+    margin-top: 4px;
+}
+
+.login-submit:hover {
+    box-shadow: 0 8px 24px rgba(212, 168, 83, 0.35);
+}
+
+.login-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.login-submit svg {
+    width: 16px;
+    height: 16px;
+}
+
+.login-spinner {
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-top-color: #000;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+    display: inline-block;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

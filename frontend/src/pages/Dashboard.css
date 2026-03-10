@@ -1,0 +1,405 @@
+.dashboard {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: var(--bg);
+}
+
+.dash-feed {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: visible;
+    padding: 32px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.dash-panel {
+    width: 312px;
+    flex-shrink: 0;
+    background: var(--surface);
+    border-left: 1px solid var(--border);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s var(--ease);
+}
+
+.dash-panel.glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+}
+
+.dash-heading {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 4px;
+}
+
+.dash-heading h1 {
+    font-family: var(--font-head);
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.5px;
+}
+
+.dash-heading span {
+    font-size: 13px;
+    color: var(--text-3);
+    font-weight: 400;
+}
+
+.section-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.section-label {
+    font-family: var(--font-head);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: -0.2px;
+}
+
+.section-link {
+    font-size: 12px;
+    color: var(--gold);
+    font-weight: 500;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    transition: all 0.2s var(--ease);
+}
+
+.section-link:hover {
+    opacity: 0.75;
+    transform: translateX(3px);
+}
+
+.hotel-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+
+/* ✅ PROMO BANNER — πλήρως ορατό */
+
+.promo-banner {
+    position: relative;
+    overflow: visible;
+    /* ✅ ήταν hidden — έκρυβε το badge */
+    background: linear-gradient(120deg, #1a120a 0%, #2a1d0e 60%, #3a2a10 100%);
+    border: 1px solid rgba(212, 168, 83, 0.35);
+    border-radius: var(--r-lg);
+    padding: 24px 28px;
+    cursor: pointer;
+    transition: all 0.3s var(--ease);
+    box-shadow: 0 4px 24px rgba(212, 168, 83, 0.08);
+}
+
+.promo-banner:hover {
+    border-color: var(--gold);
+    box-shadow: 0 8px 32px rgba(212, 168, 83, 0.2);
+    transform: translateY(-2px);
+}
+
+.promo-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.promo-glow {
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(212, 168, 83, 0.18) 0%, transparent 70%);
+    pointer-events: none;
+    transition: all 0.5s var(--ease);
+    z-index: 1;
+}
+
+.promo-banner:hover .promo-glow {
+    transform: scale(1.5);
+    opacity: 0.9;
+}
+
+.promo-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.promo-text strong {
+    display: block;
+    font-family: var(--font-head);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: -0.4px;
+    line-height: 1.1;
+    margin-bottom: 6px;
+}
+
+.promo-text p {
+    font-size: 13px;
+    color: var(--text-2);
+    max-width: 260px;
+    line-height: 1.5;
+}
+
+
+/* ✅ BADGE — μεγαλύτερο και πιο εντυπωσιακό */
+
+.promo-badge {
+    background: linear-gradient(135deg, var(--gold), #c49a3c);
+    color: #000;
+    font-family: var(--font-head);
+    font-size: 32px;
+    font-weight: 800;
+    padding: 14px 22px;
+    border-radius: var(--r-lg);
+    line-height: 1;
+    flex-shrink: 0;
+    letter-spacing: -1px;
+    box-shadow: 0 6px 24px rgba(212, 168, 83, 0.4), 0 0 0 2px rgba(212, 168, 83, 0.2);
+    text-align: center;
+    white-space: nowrap;
+    position: relative;
+    z-index: 3;
+}
+
+.promo-badge::after {
+    content: 'Limited Offer';
+    display: block;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-top: 4px;
+}
+
+
+/* ─────────────────────────────── */
+
+.pop-tabs {
+    display: flex;
+    gap: 4px;
+    background: var(--surface2);
+    border-radius: var(--r-md);
+    padding: 4px;
+    margin-bottom: 14px;
+    width: fit-content;
+}
+
+.pop-tab {
+    padding: 6px 14px;
+    border-radius: var(--r-sm);
+    border: none;
+    background: transparent;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-2);
+    cursor: pointer;
+    transition: all 0.18s var(--ease);
+}
+
+.pop-tab.active {
+    background: var(--surface3);
+    color: var(--text);
+}
+
+.pop-tab:hover:not(.active) {
+    color: var(--text);
+}
+
+.popular-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.panel-user {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 22px 20px 18px;
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+}
+
+.panel-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-head);
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: all 0.2s var(--ease);
+}
+
+.panel-user-info h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.2;
+}
+
+.panel-user-info p {
+    font-size: 11px;
+    color: var(--text-3);
+    margin-top: 2px;
+}
+
+
+/* ✅ ΒΕΛΑΚΙ — ορατό με background */
+
+.panel-chevron {
+    margin-left: auto;
+    cursor: pointer;
+    transition: color 0.2s var(--ease), transform 0.2s var(--ease);
+    background: var(--surface3);
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--text-2);
+}
+
+.panel-chevron:hover {
+    color: var(--gold);
+    background: var(--gold-dim);
+    transform: translateY(2px);
+}
+
+.panel-chevron svg {
+    width: 16px;
+    height: 16px;
+}
+
+.panel-detail {
+    flex: 1;
+    padding: 22px 20px;
+    overflow-y: auto;
+    min-height: 0;
+    /* ✅ allows flex child to scroll properly */
+}
+
+.panel-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap: 12px;
+    color: var(--text-3);
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.panel-empty svg {
+    width: 40px;
+    height: 40px;
+    opacity: 0.3;
+    color: var(--gold);
+}
+
+.panel-empty p {
+    font-size: 13px;
+    line-height: 1.5;
+    max-width: 160px;
+}
+
+
+/* ── Profile Dropdown ── */
+
+.panel-profile-drop {
+    margin: 0 14px 0;
+    background: var(--surface2);
+    border: 1px solid var(--gold);
+    border-radius: var(--r-md);
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0 8px 24px rgba(212, 168, 83, 0.12);
+}
+
+.profile-drop-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.profile-drop-item span {
+    font-size: 20px;
+    width: 32px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.profile-drop-item strong {
+    font-family: var(--font-head);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text);
+    display: block;
+    line-height: 1.2;
+}
+
+.profile-drop-item p {
+    font-size: 11px;
+    color: var(--text-3);
+    margin: 0;
+}
+
+.profile-drop-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 2px 0;
+}
+
+.profile-drop-btn {
+    width: 100%;
+    background: var(--gold-dim);
+    border: 1px solid rgba(212, 168, 83, 0.25);
+    border-radius: var(--r-sm);
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 8px;
+    cursor: pointer;
+    font-family: var(--font-body);
+    transition: all 0.2s var(--ease);
+    text-align: center;
+}
+
+.profile-drop-btn:hover {
+    background: var(--gold);
+    color: #000;
+}

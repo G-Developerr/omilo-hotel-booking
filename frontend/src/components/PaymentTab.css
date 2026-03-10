@@ -1,0 +1,298 @@
+.pay-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.pay-modal {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--r-xl);
+    width: 440px;
+    max-width: 100%;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+}
+
+.pay-head {
+    padding: 24px 24px 20px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pay-head h3 {
+    font-family: var(--font-head);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.3px;
+}
+
+.pay-close {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--r-full);
+    background: var(--surface3);
+    border: 1px solid var(--border);
+    color: var(--text-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s var(--ease);
+    padding: 0;
+}
+
+.pay-close svg {
+    width: 18px;
+    height: 18px;
+}
+
+.pay-close:hover {
+    background: var(--surface);
+    color: var(--red);
+}
+
+.pay-body {
+    padding: 24px;
+}
+
+.pay-hotel {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 20px;
+}
+
+.pay-hotel-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: var(--r-lg);
+    background: linear-gradient(135deg, var(--gold-dim), var(--surface3));
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.pay-hotel-icon svg {
+    width: 28px;
+    height: 28px;
+    color: var(--gold);
+}
+
+.pay-hotel h4 {
+    font-family: var(--font-head);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 4px;
+}
+
+.pay-hotel p {
+    font-size: 13px;
+    color: var(--text-3);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.pay-hotel p svg {
+    width: 12px;
+    height: 12px;
+    color: var(--gold);
+}
+
+.pay-dates {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.pay-date-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.pay-date-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.pay-date-label svg {
+    width: 12px;
+    height: 12px;
+    color: var(--gold);
+}
+
+.pay-date-val {
+    font-family: var(--font-head);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.pay-prices {
+    margin-bottom: 24px;
+}
+
+.pay-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    font-size: 14px;
+    color: var(--text-2);
+    border-bottom: 1px solid var(--border);
+}
+
+.pay-row:last-child {
+    border-bottom: none;
+}
+
+.pay-row.total {
+    padding-top: 16px;
+    margin-top: 4px;
+    font-family: var(--font-head);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--gold);
+    border-top: 2px solid var(--border);
+}
+
+.pay-btn {
+    width: 100%;
+    background: linear-gradient(135deg, var(--gold), #b88a3f);
+    color: #000;
+    border: none;
+    border-radius: var(--r-lg);
+    padding: 16px;
+    font-family: var(--font-head);
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s var(--ease);
+    box-shadow: var(--shadow-gold);
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.pay-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s var(--ease);
+}
+
+.pay-btn:hover::before {
+    left: 100%;
+}
+
+.pay-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 40px rgba(212, 168, 83, 0.3);
+}
+
+.pay-btn:active {
+    transform: translateY(0);
+}
+
+
+/* ── Editable fields ── */
+
+.pay-date-input {
+    background: var(--surface3);
+    border: 1px solid var(--gold);
+    border-radius: var(--r-sm);
+    color: var(--text);
+    font-family: var(--font-head);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 8px;
+    width: 100%;
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.pay-date-input:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 2px var(--gold-dim);
+}
+
+
+/* date input calendar icon color */
+
+.pay-date-input::-webkit-calendar-picker-indicator {
+    filter: invert(0.7) sepia(1) saturate(3) hue-rotate(5deg);
+    cursor: pointer;
+}
+
+.pay-edit-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.pay-edit-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 12px;
+    border-radius: var(--r-sm);
+    border: 1px solid var(--border);
+    background: var(--surface3);
+    color: var(--text-2);
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s var(--ease);
+}
+
+.pay-edit-btn:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+    background: var(--gold-dim);
+}
+
+.pay-edit-btn.active {
+    border-color: var(--gold);
+    color: var(--gold);
+    background: var(--gold-dim);
+}
+
+.pay-edit-btn svg {
+    width: 13px;
+    height: 13px;
+}
