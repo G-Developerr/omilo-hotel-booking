@@ -3,7 +3,8 @@
 A modern hotel booking application built with React.
 
 ## 🚀 Live Demo
-[View on Render]([https://your-render-link.onrender.com](https://omilo-hotel-booking.onrender.com/))
+[View on Render]
+([https://your-render-link.onrender.com](https://omilo-hotel-booking.onrender.com/))
 
 ## 🔑 Demo Accounts
 
